@@ -1,0 +1,20 @@
+version: '2.5.1'
+services:
+    php:
+        image: php:8.1-apache
+        volumes:
+            - ./public/:/var/www/html/
+            - ./:/var/www/
+        ports:
+            - 8080:80
+    nest:
+        image: ubuntu
+        tty: true
+        volumes:
+            - ./nestjs/:/var/local/nestjs/
+        ports:
+            - 3000:3000
+    redis:
+        image: redis:latest
+        ports:
+            - 6379:6379

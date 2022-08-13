@@ -1,0 +1,9 @@
+version: '2.5.1'
+services:
+    ubuntu:
+        image: ubuntu
+        tty: true
+        volumes:
+            - ./:/var/local/nestjs/
+        ports:
+            - 3000:3000
